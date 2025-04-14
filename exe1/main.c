@@ -30,6 +30,9 @@ void i2c_task(void *p) {
 
     // TODO
     // Configure o acc para operar em 4G
+    buf_write[0] = 0x1C; // registrador
+    buf_write[1] = 1 << 3;            // ta tabela temos que 4g == 1, ou seja 01 em binario. Como AFS_SEL fica nos bits 3 e 4, precisamos colocar 1 no bit 3. Por isso fazemos 1<<3 
+    i2c_write_blocking(i2c_default, I2C_CHIP_ADDRESS, buf_write, 2, false);
 
     while (1) {
         vTaskDelay(pdMS_TO_TICKS(200));
