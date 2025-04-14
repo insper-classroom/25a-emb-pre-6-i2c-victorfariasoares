@@ -11,7 +11,7 @@
 #include "mpu6050.h"
 
 const int I2C_CHIP_ADDRESS = 0x68;
-const int BMP_ID = 0x58;
+const int BMP_ID = 0x76;
 const int I2C_SDA_GPIO = 20;
 const int I2C_SCL_GPIO = 21;
 
